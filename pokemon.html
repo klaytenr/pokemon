@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        for(var x=1; x<=151; x++){
+            $.get("https://pokeapi.co/api/v2/pokemon/"+x, function(data){
+                $("#pokemon").append("<img src=\""+data.sprites["front_default"]+"\">");
+            }, "json");
+        }
+    })
+    </script>
+</head>
+<body>
+    <div id="pokemon"></div>
+</body>
+</html>
