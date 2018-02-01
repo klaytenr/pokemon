@@ -5,11 +5,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
+        var htmlstring="";
         for(var x=1; x<=151; x++){
-            $.get("https://pokeapi.co/api/v2/pokemon/"+x, function(data){
-                $("#pokemon").append("<img src=\""+data.sprites["front_default"]+"\">");
-            }, "json");
+            htmlstring+='<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+x+'.png">';
         }
+        $("#pokemon").append(htmlstring);
     })
     </script>
 </head>
